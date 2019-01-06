@@ -1,5 +1,6 @@
 <!-- footer -->
 <footer class="footer"> 
-    © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a>
+    © 2019 Todos los Derechos Reservados. AdminRRHH <a href="https://colorlib.com">Bethel</a>
+    <span class="pull-right">Version 1.0.0</span>
 </footer>
 <!-- End footer -->

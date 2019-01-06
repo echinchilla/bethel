@@ -41,9 +41,8 @@
         <!-- Page wrapper  -->
         <div class="page-wrapper">
             <tiles:insertAttribute name="body" />
-            <tiles:insertAttribute name="footer" />
         </div>
-        
+        <tiles:insertAttribute name="footer" />
     </div>
             <!-- All Jquery -->
             <script src="<c:url value='/resources/js/jquery.min.js' />"></script>

@@ -14,7 +14,7 @@
                         <li class="nav-label">Apps</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Compose</a></li>
+                                <li><a href="${pageContext.request.contextPath}/products">Compose</a></li>
                                 <li><a href="email-read.html">Read</a></li>
                                 <li><a href="email-inbox.html">Inbox</a></li>
                             </ul>
@@ -67,17 +67,16 @@
                                 <li><a href="table-datatable.html">Data Tables</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">Layout</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a>
+                        <li class="nav-label">Administrador</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-lock"></i><span class="hide-menu">Seguridad</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="layout-blank.html">Blank</a></li>
-                                <li><a href="layout-boxed.html">Boxed</a></li>
-                                <li><a href="layout-fix-header.html">Fix Header</a></li>
-                                <li><a href="layout-fix-sidebar.html">Fix Sidebar</a></li>
+                                <li><a href="layout-blank.html">Usuarios</a></li>
+                                <li><a href="layout-boxed.html">Perfiles</a></li>
+                                <li><a href="${pageContext.request.contextPath}/permisos/">Permisos</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">EXTRA</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-book"></i><span class="hide-menu">Pages <span class="label label-rouded label-success pull-right">8</span></span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-lock"></i><span class="hide-menu">Seguridad <span class="label label-rouded label-success pull-right">8</span></span></a>
                             <ul aria-expanded="false" class="collapse">
 
                                 <li><a href="#" class="has-arrow">Authentication <span class="label label-rounded label-success">6</span></a>
