@@ -4,14 +4,9 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-primary pull-right">2</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Ecommerce </a></li>
-                                <li><a href="index1.html">Analytics </a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Apps</li>
+                        <li class="nav-label">Inicio</li>
+                        <li> <a href="${pageContext.request.contextPath}/"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                        <!--<li class="nav-label">Apps</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="${pageContext.request.contextPath}/products">Compose</a></li>
@@ -66,7 +61,7 @@
                                 <li><a href="table-bootstrap.html">Basic Tables</a></li>
                                 <li><a href="table-datatable.html">Data Tables</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="nav-label">Administrador</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-lock"></i><span class="hide-menu">Seguridad</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -75,7 +70,7 @@
                                 <li><a href="${pageContext.request.contextPath}/permisos/">Permisos</a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">EXTRA</li>
+                        <!--<li class="nav-label">EXTRA</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-lock"></i><span class="hide-menu">Seguridad <span class="label label-rouded label-success pull-right">8</span></span></a>
                             <ul aria-expanded="false" class="collapse">
 
@@ -117,7 +112,7 @@
                                 </li>
                                 <li><a href="#">item 1.4</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
