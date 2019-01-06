@@ -15,7 +15,7 @@
  
    <!-- Home Page -->
    <definition name="home" extends="base-definition">  
-       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="title" value="Bethel | Inicio" />  
        <put-attribute name="body" value="/WEB-INF/views/pages/home.jsp" />  
    </definition>  
 
