@@ -3,6 +3,8 @@
     Created on : 05/01/2019, 11:47:41 PM
     Author     : Erick Chinchilla
 --%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>   
 
 <!-- Container fluid  -->
             <div class="container-fluid">
@@ -10,25 +12,26 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header"><h4 class="card-title">Crear Permiso</h4></div>
-                            <form>
+                            <div class="card-header"><h4 class="card-title">Modificar Permiso</h4></div>
+                            <form:form method="POST" action="${pageContext.request.contextPath}/permisos/modificar" modelAttribute="permiso">    
                             <div class="card-body"> 
+                                <form:hidden  path="IdPermiso" />
                                 <div class="basic-form">
                                         <div class="form-group" style="margin-top:20px;">
                                             <label>Nombre</label>
-                                            <input type="text" class="form-control" placeholder="Ingrese el nombre del permiso">
+                                            <form:input path="Nombre" type="text" class="form-control" placeholder="Ingrese el nombre del permiso" />
                                         </div>
                                         
                                     <div class="form-group">
                                         <label>Estado</label>
                                         <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="estado" id="activo" value="A" checked>
-                                        <label class="form-check-label" for="activo">Activo</label>
+                                            <form:radiobutton class="form-check-input" path="Estado" id="A" value="activo"/>
+                                        <label class="form-check-label" for="A">Activo</label>
                                     </div>
                                     
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="estado" id="inactivo" value="I">
-                                        <label class="form-check-label" for="inactivo">Inactivo</label>
+                                        <form:radiobutton class="form-check-input" path="Estado" id="I" value="inactivo"/>
+                                        <label class="form-check-label" for="I">Inactivo</label>
                                     </div>
                                     </div>
                                         
@@ -38,7 +41,7 @@
                                 <a href="${pageContext.request.contextPath}/permisos/" class="btn btn-inverse"><i class="fa fa-close"></i> Cancelar</a>
                                 <button type="submit" class="btn btn-success"> <i class="fa fa-save"></i> Guardar</button>
                             </div>
-                                </form>
+                            </form:form>
                         </div>
                     </div>
                 </div>

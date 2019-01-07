@@ -1,7 +1,11 @@
 package com.bethel.adminrrhh.controller;
 
+import com.bethel.adminrrhh.model.Crud_Permisos;
+import com.bethel.adminrrhh.model.entity.Permisos;
+import com.bethel.adminrrhh.model.exception.BethelException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/permisos")
-public class PermisosController {
+public class PermisosController extends Crud_Permisos{
     
     /**
      * método GET para ingresar a la lista 
@@ -24,6 +28,11 @@ public class PermisosController {
      */
     @RequestMapping(value = { "/"}, method = RequestMethod.GET)
     public String index(ModelMap model) {
+        try{
+         model.addAttribute("permisos",getAll());   
+        }catch(BethelException ex){
+            
+        }
         return "permisosLista";
     }
     
@@ -34,7 +43,12 @@ public class PermisosController {
      * @return string : uri de la pagina para visualizar los detalles
      */
     @RequestMapping(value = { "/detalles/{id}"}, method = RequestMethod.GET)
-    public String detalles(ModelMap model,@PathVariable int id) {
+    public String detalles(ModelMap model,@PathVariable long id) {
+        try{
+            model.addAttribute("permiso", getById(id));
+        }catch(BethelException ex){
+            
+        }
         return "permisosDetalles";
     }
     
@@ -45,6 +59,7 @@ public class PermisosController {
      */
     @RequestMapping(value = { "/crear"}, method = RequestMethod.GET)
     public String crear(ModelMap model) {
+        model.addAttribute("permiso",new Permisos());
         return "permisosCrear";
     }
     
@@ -54,8 +69,12 @@ public class PermisosController {
      * @return string : uri de la pagina prncipal del mantenimiento en caso de éxito.
      */
     @RequestMapping(value = { "/crear"}, method = RequestMethod.POST)
-    public String insertar(ModelMap model) {
-        return "permisosLista";
+    public String insertar(ModelMap model,@ModelAttribute("permiso") Permisos permiso) {
+        try{
+            return save(permiso)?"redirect:/permisos/":"redirect:permisos/insertar";
+        }catch(BethelException ex){
+            return "redirect:/insertar";
+        }
     }
     
     /**
@@ -65,7 +84,13 @@ public class PermisosController {
      * @return string : uri de la vista que corresponde a la actualización de un registro
      */
     @RequestMapping(value = { "/modificar/{id}"}, method = RequestMethod.GET)
-    public String modificar(ModelMap model,@PathVariable int id) {
+    public String modificar(ModelMap model,@PathVariable long id) {
+        try{
+            model.addAttribute("permiso", getById(id));
+        }catch(BethelException ex){
+            return "redirect:/";
+        }
+                
         return "permisosModificar";
     }
     
@@ -75,8 +100,12 @@ public class PermisosController {
      * @return URI : de la pagina principal del mantenimiento en caso de éxito.
      */
     @RequestMapping(value = { "/modificar"}, method = RequestMethod.POST)
-    public String modificar(ModelMap model) {
-        return "permisosLista";
+    public String modificar(ModelMap model,@ModelAttribute("permiso") Permisos permiso) {
+        try{
+            return save(permiso)?"redirect:/permisos/":"redirect:/permisos/modificar";
+        }catch(BethelException ex){
+            return "redirect:/modificar";
+        }
     }
     
     /**
@@ -86,7 +115,12 @@ public class PermisosController {
      * @return string: uri de la vista que permite realizar la eliminación.
      */
     @RequestMapping(value = { "/eliminar/{id}"}, method = RequestMethod.GET)
-    public String eliminar(ModelMap model,@PathVariable int id) {
+    public String eliminar(ModelMap model,@PathVariable long id) {
+        try{
+            model.addAttribute("permiso", getById(id));
+        }catch(Exception ex){
+            return "redirect:/";
+        }
         return "permisosEliminar";
     }
     
@@ -96,7 +130,11 @@ public class PermisosController {
      * @return string :uri de la pagina principal del mantenimiento en caso de éxito.
      */
     @RequestMapping(value = { "/eliminar"}, method = RequestMethod.POST)
-    public String eliminar(ModelMap model) {
-        return "permisosLista";
+    public String eliminar(ModelMap model,@ModelAttribute("permiso") Permisos permiso) {
+        try{
+            return delete(permiso.getIdPermiso())?"redirect:/permisos/":"redirect:/permisos/eliminar";
+        }catch(BethelException ex){
+            return "redirect:/permisos/eliminar";
+        }
     }
 }
