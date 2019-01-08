@@ -15,6 +15,7 @@
     <link href="<c:url value='/resources/css/bootstrap.min.css' />"  rel="stylesheet"/>
     <link href="<c:url value='/resources/css/helper.css' />" rel="stylesheet"/>
     <link href="<c:url value='/resources/css/style.css' />" rel="stylesheet"/>
+    <link href="<c:url value='/resources/css/toastr.min.css'/>" rel="stylesheet"/>
 </head>
  
 <body class="fix-header fix-sidebar">
@@ -40,6 +41,7 @@
         
         <!-- Page wrapper  -->
         <div class="page-wrapper">
+            <tiles:insertAttribute name="alerts" />
             <tiles:insertAttribute name="body" />
         </div>
         <tiles:insertAttribute name="footer" />
@@ -57,6 +59,7 @@
             <script src="<c:url value='/resources/js/sticky-kit.min.js' />"></script>
             <!--Custom JavaScript -->
             <script src="<c:url value='/resources/js/scripts.js' />"></script>
+            
             <!-- DataTables -->
             <script src="<c:url value='/resources/js/datatables/datatables.min.js' />"></script>
             <script src="<c:url value='/resources/js/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js' />"></script>

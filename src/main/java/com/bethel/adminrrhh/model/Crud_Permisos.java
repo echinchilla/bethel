@@ -3,7 +3,6 @@ package com.bethel.adminrrhh.model;
 import com.bethel.adminrrhh.model.entity.Permisos;
 import com.bethel.adminrrhh.model.exception.BethelException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**

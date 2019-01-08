@@ -18,9 +18,6 @@
                                 <h6 class="card-subtitle">Listado de Todos los Permisos Registrados en el Sistema.</h6>
                             </div>
                             
-                            
-                            
-                            
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table id="example23" class="display table table-hover table-striped " cellspacing="0" width="100%">
